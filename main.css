@@ -4331,6 +4331,13 @@ form textarea:required:valid {
   display: none !important;
 }
 
+.tools-carousel-wrapper .swiper-button-prev,
+.tools-carousel-wrapper .swiper-button-next {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 
 /* ------------------------------------------------*/
