@@ -1071,15 +1071,22 @@
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
   const toolsSwiper = new Swiper('.tools-swiper', {
-    // Layout
-    slidesPerView: 2,
-    spaceBetween: 20,
-    centeredSlides: false,
-    loop: false,
+    slidesPerView: 4,
+    spaceBetween: 24,
+    loop: true,
 
-    // Controles
+    // autoplay
+    autoplay: {
+      delay: 2500, // tempo entre transições (ms)
+      disableOnInteraction: false, // continua mesmo após interação
+    },
+
+    // controles
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -1089,22 +1096,16 @@
       clickable: true,
     },
 
-    // Acessibilidade & UX
-    keyboard: { enabled: true },
-    mousewheel: { forceToAxis: true },
-
-    // Responsivo (ajuste conforme seu design)
+    // responsivo
     breakpoints: {
-      480:  { slidesPerView: 3, spaceBetween: 20 },
-      768:  { slidesPerView: 4, spaceBetween: 22 },
-      1024: { slidesPerView: 5, spaceBetween: 24 },
-      1280: { slidesPerView: 6, spaceBetween: 24 }
+      320: { slidesPerView: 1.5, spaceBetween: 16 },
+      480: { slidesPerView: 2, spaceBetween: 20 },
+      768: { slidesPerView: 3, spaceBetween: 22 },
+      1024: { slidesPerView: 4, spaceBetween: 24 },
     },
-
-    // (Opcional) autoplay
-    // autoplay: { delay: 2500, disableOnInteraction: false },
   });
 </script>
+
 
 
 </body>
