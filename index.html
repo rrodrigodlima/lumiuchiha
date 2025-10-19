@@ -41,6 +41,8 @@
   <link rel="stylesheet" type="text/css" href="css/plugins.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <!-- Template Styles End -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+
 
   <!-- Custom Browser Color Start -->
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#dcdce7">
@@ -548,52 +550,61 @@
 
         <!-- Content Block - Tools List Start -->
         <div class="content__block grid-block block-large">
-<!-- Tools Carousel Start -->
-<div class="tools-carousel">
-  <button class="carousel-btn prev">&#10094;</button>
+<!-- Tools Carousel (Swiper) -->
+<div class="tools-carousel-wrapper">
+  <div class="swiper tools-swiper">
+    <div class="swiper-wrapper">
+      <!-- slide -->
+      <div class="swiper-slide">
+        <div class="tools-cards__card">
+          <img class="tools-cards__icon" src="img/icons/icon-photoshop.svg" alt="Photoshop">
+          <h6 class="tools-cards__caption">Photoshop</h6>
+        </div>
+      </div>
 
-  <div class="tools-cards">
-    <div class="tools-cards__item">
-      <div class="tools-cards__card">
-        <img class="tools-cards__icon" src="img/icons/icon-photoshop.svg" alt="Photoshop">
-        <h6 class="tools-cards__caption">Photoshop</h6>
+      <div class="swiper-slide">
+        <div class="tools-cards__card">
+          <img class="tools-cards__icon" src="img/icons/icon-figma.svg" alt="Premiere">
+          <h6 class="tools-cards__caption">Premiere</h6>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="tools-cards__card">
+          <img class="tools-cards__icon" src="img/icons/icon-illustrator.svg" alt="After Effects">
+          <h6 class="tools-cards__caption">After Effects</h6>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="tools-cards__card">
+          <img class="tools-cards__icon" src="img/icons/icon-scketch.svg" alt="Krita">
+          <h6 class="tools-cards__caption">Krita</h6>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="tools-cards__card">
+          <img class="tools-cards__icon" src="img/icons/icon-blender.svg" alt="Blender">
+          <h6 class="tools-cards__caption">Blender</h6>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="tools-cards__card">
+          <img class="tools-cards__icon" src="img/icons/icon-notion.svg" alt="Notion">
+          <h6 class="tools-cards__caption">Notion</h6>
+        </div>
       </div>
     </div>
-    <div class="tools-cards__item">
-      <div class="tools-cards__card">
-        <img class="tools-cards__icon" src="img/icons/icon-figma.svg" alt="Premiere">
-        <h6 class="tools-cards__caption">Premiere</h6>
-      </div>
-    </div>
-    <div class="tools-cards__item">
-      <div class="tools-cards__card">
-        <img class="tools-cards__icon" src="img/icons/icon-illustrator.svg" alt="After Effects">
-        <h6 class="tools-cards__caption">After Effects</h6>
-      </div>
-    </div>
-    <div class="tools-cards__item">
-      <div class="tools-cards__card">
-        <img class="tools-cards__icon" src="img/icons/icon-scketch.svg" alt="Krita">
-        <h6 class="tools-cards__caption">Krita</h6>
-      </div>
-    </div>
-    <div class="tools-cards__item">
-      <div class="tools-cards__card">
-        <img class="tools-cards__icon" src="img/icons/icon-blender.svg" alt="Blender">
-        <h6 class="tools-cards__caption">Blender</h6>
-      </div>
-    </div>
-    <div class="tools-cards__item">
-      <div class="tools-cards__card">
-        <img class="tools-cards__icon" src="img/icons/icon-notion.svg" alt="Notion">
-        <h6 class="tools-cards__caption">Notion</h6>
-      </div>
-    </div>
+
+    <!-- Controles -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
   </div>
-
-  <button class="carousel-btn next">&#10095;</button>
 </div>
-<!-- Tools Carousel End -->
+
 
         </div>
         <!-- Content Block - Tools List End -->
@@ -1003,21 +1014,44 @@
       }
   </script>
   <!-- Load Scripts End -->
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
-  const carousel = document.querySelector('.tools-cards');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  let scrollAmount = 0;
-  const scrollStep = 180; // ajuste o valor conforme o tamanho dos cards
+  const toolsSwiper = new Swiper('.tools-swiper', {
+    // Layout
+    slidesPerView: 2,
+    spaceBetween: 20,
+    centeredSlides: false,
+    loop: false,
 
-  nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
-  });
+    // Controles
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
 
-  prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    // Acessibilidade & UX
+    keyboard: { enabled: true },
+    mousewheel: { forceToAxis: true },
+
+    // Responsivo (ajuste conforme seu design)
+    breakpoints: {
+      480:  { slidesPerView: 3, spaceBetween: 20 },
+      768:  { slidesPerView: 4, spaceBetween: 22 },
+      1024: { slidesPerView: 5, spaceBetween: 24 },
+      1280: { slidesPerView: 6, spaceBetween: 24 }
+    },
+
+    // (Opcional) autoplay
+    // autoplay: { delay: 2500, disableOnInteraction: false },
   });
 </script>
+
 
 </body>
 
