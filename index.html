@@ -1003,6 +1003,21 @@
       }
   </script>
   <!-- Load Scripts End -->
+<script>
+  const carousel = document.querySelector('.tools-cards');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let scrollAmount = 0;
+  const scrollStep = 180; // ajuste o valor conforme o tamanho dos cards
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+  });
+</script>
 
 </body>
 
