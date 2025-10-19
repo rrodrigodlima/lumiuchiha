@@ -4324,6 +4324,13 @@ form textarea:required:valid {
   font-weight: 500;
 }
 
+/* Esconde quaisquer setas ou bolinhas remanescentes */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+  display: none !important;
+}
+
 
 
 /* ------------------------------------------------*/
