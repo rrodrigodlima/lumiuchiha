@@ -4284,13 +4284,13 @@ form textarea:required:valid {
 
 
 .tools-carousel-wrapper {
-  max-width: 1100px;   /* ajuste conforme seu layout */
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
 }
 
 .tools-swiper {
-  padding: 12px 44px;  /* respiro para as setas */
+  padding: 12px 0;
 }
 
 .swiper-slide {
@@ -4302,7 +4302,7 @@ form textarea:required:valid {
   background: #f5f5f5;
   border-radius: 12px;
   padding: 16px 18px;
-  width: 160px;              /* largura do card */
+  width: 160px;
   text-align: center;
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -4321,20 +4321,9 @@ form textarea:required:valid {
 
 .tools-cards__caption {
   margin: 0;
+  font-weight: 500;
 }
 
-/* Estilo das setas/paginação (opcional) */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #111;               /* mude conforme seu tema */
-}
-
-.swiper-pagination-bullet {
-  opacity: .5;
-}
-.swiper-pagination-bullet-active {
-  opacity: 1;
-}
 
 
 /* ------------------------------------------------*/
