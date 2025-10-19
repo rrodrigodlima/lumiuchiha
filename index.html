@@ -1074,23 +1074,20 @@
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 
+<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
   const toolsSwiper = new Swiper('.tools-swiper', {
     slidesPerView: 4,
     spaceBetween: 24,
     loop: true,
-
-    // autoplay
     autoplay: {
-      delay: 2500, // tempo entre transições (ms)
-      disableOnInteraction: false, // continua mesmo após interação
+      delay: 2500,
+      disableOnInteraction: false,
     },
-
-  // remover setas e paginação
-    navigation: false,
-    pagination: false,
-
-    // responsivo
+    // força remover setas e bolinhas
+    navigation: {},
+    pagination: {},
     breakpoints: {
       320: { slidesPerView: 1.5, spaceBetween: 16 },
       480: { slidesPerView: 2, spaceBetween: 20 },
@@ -1099,6 +1096,7 @@
     },
   });
 </script>
+
 
 
 
