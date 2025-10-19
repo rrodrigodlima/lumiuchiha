@@ -4298,31 +4298,7 @@ form textarea:required:valid {
   justify-content: center;
 }
 
-.tools-cards__card {
-  background: #f5f5f5;
-  border-radius: 12px;
-  padding: 16px 18px;
-  width: 160px;
-  text-align: center;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
 
-.tools-cards__card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.12);
-}
-
-.tools-cards__icon {
-  width: 64px;
-  height: 64px;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-.tools-cards__caption {
-  margin: 0;
-  font-weight: 500;
-}
 
 /* Esconde quaisquer setas ou bolinhas remanescentes */
 .swiper-button-prev,
